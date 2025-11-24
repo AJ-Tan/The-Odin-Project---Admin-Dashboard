@@ -277,6 +277,7 @@ h1 {
   width: 100%;
   background-color: hsl(0, 0%, 100%);
   overflow: hidden;
+  box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.2);
 
   &::before {
     content: '';
@@ -331,11 +332,12 @@ aside {
   background-color: hsl(0, 0%, 100%);
   border-radius: 0.5rem;
   padding: 2.5rem 2rem;
+  box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.2);
 }
 
 .announcement-item {
   padding-inline: 0.5rem;
-
+  
   p {
     color: hsl(0, 0%, 50%);
     font-size: 0.9rem;
@@ -360,6 +362,7 @@ aside {
   background-color: hsl(0, 0%, 100%);
   border-radius: 0.5rem;
   padding: 1.5rem 1.8rem;
+  box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.2);
 }
 
 .trending-item {
