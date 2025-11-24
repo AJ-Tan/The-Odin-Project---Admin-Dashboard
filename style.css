@@ -14,9 +14,6 @@ html {
 }
 
 body {
-  display: grid;
-  grid-template-rows: 14.2rem 1fr;
-  gap: 0.5rem;
   padding-inline-start: 24.1rem;
   background-color: var(--color-bg);
 }
@@ -53,7 +50,8 @@ button {
   display: grid;
   align-content: start;
   gap: 4.2rem;
-  padding: 1.3rem;
+  padding-inline: 1.3rem;
+  padding-block-start: 1.3rem;
 
   background-color: var(--color-primary);
   color: white;
@@ -105,9 +103,10 @@ h1 {
 .page-header {
   display: grid;
   grid-template-columns: 5fr 3.1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 6rem 1fr;
   padding: 1rem 3.2rem;
   background-color: hsl(0, 0%, 100%);
+  margin-bottom: 4px;
   box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.2);
 }
 
@@ -153,7 +152,7 @@ h1 {
 /* Header Greeting */
 .header-greeting {
   display: grid;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
   column-gap: 1.5rem;
@@ -174,6 +173,7 @@ h1 {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1;
+  word-wrap: break-word;
 }
 
 /* Header Actions */
@@ -202,19 +202,27 @@ h1 {
 
 /* Main Content */
 .main-content {
-  padding: 2.1rem 1.55rem;
+  padding-block: 2.5rem;
+  padding-inline-start: 1.55rem;
+  padding-inline-end: 2.9rem;
   display: grid;
-  grid-template-columns: 2.7fr 1fr;
-  gap: 1.5rem
+  grid-template-columns: 2.9fr 1fr;
+  gap: 1.9rem;
 }
 
-.project-header {
+.content-header {
   margin-block-end: 1.1rem;
+}
+
+.project {
+  display: grid;
+  grid-template-rows: max-content 1fr;
 }
 
 .project-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
   column-gap: 2rem;
   row-gap: 2.3rem;
 }
@@ -272,3 +280,64 @@ h1 {
   }
 }
 
+/* Aside */
+aside {
+  display: grid;
+  gap: 2rem;
+  height: 100%;
+}
+
+.announcement-list {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+  padding: 2.5rem 2rem;
+}
+
+.announcement-item {
+  padding-inline: 0.5rem;
+
+  p {
+    color: hsl(0, 0%, 50%);
+    font-size: 0.9rem;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid hsl(0, 0%, 80%);
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+}
+
+.trending {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+}
+
+.trending-list {
+  display: grid;
+  gap: 2rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+  padding: 1.5rem 1.8rem;
+}
+
+.trending-item {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 1.5rem;
+  font-size: 1.1rem;
+  
+  img {
+    width: 3.7rem;
+    grid-row: 1 / span 2;
+  }
+
+  span:nth-child(2) {
+    margin-block-start: 0.5rem;
+  }
+
+  span:nth-child(3) {
+    color: gray;
+  }
+}
