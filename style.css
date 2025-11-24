@@ -6,6 +6,7 @@
 
 :root {
   --color-primary: hsl(201, 79%, 46%);
+  --color-primary-hover: hsl(201, 77%, 40%);
   --color-bg: rgb(226,232,240);
 }
 
@@ -38,6 +39,15 @@ img {
 
 button {
   font: inherit;
+  cursor: pointer;
+
+  &:hover svg {
+    fill: var(--color-primary-hover);
+  }
+}
+
+label {
+  cursor: pointer;
 }
 
 /* Sidebar */
@@ -87,6 +97,10 @@ h1 {
   padding-inline: 0.9rem;
 }
 
+.sidebar-item:hover {
+  text-decoration: underline;
+}
+
 .sidebar-item a {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -116,6 +130,7 @@ h1 {
   grid-template-columns: auto 1fr;
   gap: 1.4rem;
   padding-block-start: 0.8rem;
+
   svg {
     margin-block-start: 0.2rem;
   }
@@ -126,6 +141,12 @@ h1 {
   border-radius: 2rem;
   height: 2.5rem;
   background-color: rgb(226,232,240);
+  padding-inline: 2rem;
+  outline: none;
+
+  &:focus {
+    border: 2px solid var(--color-primary);
+  }
 }
 
 /* Header User */
@@ -138,6 +159,15 @@ h1 {
   gap: 2.35rem;
   padding-block-start: 0.3rem;
   padding-inline-end: 3rem;
+}
+
+.header-notification {
+  background-color: transparent;
+  border: none;
+
+  &:hover svg {
+    fill: var(--color-primary);
+  }
 }
 
 .user-img {
@@ -184,7 +214,6 @@ h1 {
   padding-inline: 1.8rem;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .btn-primary {
@@ -198,6 +227,11 @@ h1 {
   color: hsl(0, 0%, 100%);
   font-size: 1.2rem;
   font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
 }
 
 /* Main Content */
@@ -214,6 +248,7 @@ h1 {
   margin-block-end: 1.1rem;
 }
 
+/* Project */
 .project {
   display: grid;
   grid-template-rows: max-content 1fr;
@@ -285,8 +320,13 @@ aside {
   display: grid;
   gap: 2rem;
   height: 100%;
+
+  li {
+    cursor: pointer;
+  }
 }
 
+/* Announcement */
 .announcement-list {
   background-color: hsl(0, 0%, 100%);
   border-radius: 0.5rem;
@@ -308,6 +348,7 @@ aside {
   }
 }
 
+/* Trending */
 .trending {
   display: grid;
   grid-template-rows: max-content 1fr;
